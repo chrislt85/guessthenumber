@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 export const styles = StyleSheet.create({
-    container:{
+    container: {
         width: 50,
         height: 50,
         justifyContent: 'center',
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
     },
     number: {
-        fontSize: 22,
-        fontWeight: 'bold'
+        fontSize: 20,
+        fontFamily: 'Lato-Bold',
     }
 });

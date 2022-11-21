@@ -4,7 +4,7 @@ import { styles } from './styles';
 import { Card, Input, NumberContainer } from "../../components";
 import colors from "../../constants/colors";
 
-const StartGame = () => {
+const StartGame = ({onStartGame}) => {
     const [number, setNumber] = useState('');
     const [selectedNumber, setSelectedNumber] = useState(null);
     const [confirmed, setConfirmed] = useState(false);
@@ -22,7 +22,7 @@ const StartGame = () => {
         const chosenNumber = parseInt(number, 10);
         if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99)
         {
-            Alert.alert('Invalid Number', 'Number hasta to be between 1 and 99', [{text: 'Okay', style: '', onPress: {onHandleReset}}]);
+            Alert.alert('Invalid Number', 'Number has to be between 1 and 99', [{text: 'Okay', style: 'destructive', onPress: onHandleReset}]);
         }
         else
         {
@@ -32,18 +32,13 @@ const StartGame = () => {
         }
     }
 
-
-    const onHandleStartGame = () => {
-
-    }
-
     const confirmedOutput = () => confirmed ? (
         <Card style={styles.confirmedContainer}>
             <Text style={styles.confirmedTitle}>Your selected number</Text>
             <NumberContainer number={selectedNumber} />
             <Button
                 title="Start Game"
-                onPress={onHandleStartGame}
+                onPress={() => onStartGame(selectedNumber)}
                 color={colors.primary}
             />
         </Card>
