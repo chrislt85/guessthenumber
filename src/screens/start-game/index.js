@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 import { styles } from './styles';
-import { Card, Input, NumberContainer } from "../../components";
+import { Card, Input, NumberContainer, CustomText, CustomButton } from "../../components";
 import colors from "../../constants/colors";
 
 const StartGame = ({onStartGame}) => {
@@ -34,13 +34,11 @@ const StartGame = ({onStartGame}) => {
 
     const confirmedOutput = () => confirmed ? (
         <Card style={styles.confirmedContainer}>
-            <Text style={styles.confirmedTitle}>Your selected number</Text>
+            <CustomText style={styles.confirmedTitle}>Your selected number</CustomText>
             <NumberContainer number={selectedNumber} />
-            <Button
-                title="Start Game"
-                onPress={() => onStartGame(selectedNumber)}
-                color={colors.primary}
-            />
+            <CustomButton style={styles.buttonStartGame} onPress={() => onStartGame(selectedNumber)}>
+                <CustomText style={styles.buttonText}>Start Game</CustomText>
+            </CustomButton>
         </Card>
     ) : null;
 
@@ -49,9 +47,9 @@ const StartGame = ({onStartGame}) => {
             Keyboard.dismiss();
         }}>
             <View style={styles.container}>
-                <Text style={styles.title}>Let's start!</Text>
+                <CustomText style={styles.title}>Let's start!</CustomText>
                 <Card style={styles.inputContainer}>
-                    <Text style={styles.label}>Select a number</Text>
+                    <CustomText style={styles.label}>Choose a number</CustomText>
                     <Input
                         style={styles.input}
                         placeholder="0" 
@@ -64,16 +62,12 @@ const StartGame = ({onStartGame}) => {
                         value={number}
                     />
                     <View style={styles.buttonContainer}>
-                        <Button
-                            title="Restart"
-                            onPress={onHandleReset}
-                            color={colors.secondary}
-                        />
-                        <Button 
-                            title="Confirm"
-                            onPress={onHandleConfirm}
-                            color={colors.primary}
-                        />
+                        <CustomButton style={styles.buttonRestart} onPress={onHandleReset}>
+                            <CustomText style={styles.buttonText}>Restart</CustomText>
+                        </CustomButton>
+                        <CustomButton style={styles.buttonConfirm} onPress={onHandleConfirm}>
+                            <CustomText style={styles.buttonText}>Confirm</CustomText>
+                        </CustomButton>
                     </View>
                 </Card>
                 {confirmedOutput()}

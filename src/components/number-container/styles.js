@@ -7,13 +7,14 @@ export const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.secondary,
+        backgroundColor: colors.gray,
         borderColor: colors.primary,
         borderWidth: 2,
         borderRadius: 5,
+        paddingTop: 7,
     },
     number: {
-        fontSize: 20,
-        fontFamily: 'Lato-Bold',
+        fontSize: 18,
+        fontFamily: 'PressStart2P-Regular',
     }
 });

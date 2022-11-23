@@ -10,8 +10,9 @@ export const styles = StyleSheet.create({
         paddingTop: 20,
     },
     title: {
-        fontSize: 22,
+        // fontSize: 22,
+        fontSize: 32,
         color: colors.white,
-        fontFamily: 'Lato-Regular',
+        fontFamily: 'RubikIso-Regular',
     }
 });

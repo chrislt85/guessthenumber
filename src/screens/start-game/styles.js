@@ -34,18 +34,38 @@ export const styles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection: 'row',
-        width: '70%',
+        width: '95%',
         justifyContent: 'space-around',
-        marginTop: 20,
     },
     confirmedContainer:{
         width: '70%',
         height: 180,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginVertical: 30,
+        marginVertical: 20,
     },
     confirmedTitle: {
-        fontSize: 16,
+        fontSize: 12,
     }, 
+    buttonRestart: {
+        width: 116,
+        backgroundColor: colors.secondary,
+    },
+    buttonConfirm: {
+        width: 116,
+        backgroundColor: colors.primary,
+    },
+    buttonStartGame: {
+        width: 160,
+        backgroundColor: colors.primary,
+    },
+    buttonText: {
+        fontSize: 12,
+        color: colors.white,
+        paddingHorizontal: 10,
+        width: '90%',
+        textAlignVertical: 'center',
+        textAlign: 'center',
+        paddingTop: 5,
+    },
 });
